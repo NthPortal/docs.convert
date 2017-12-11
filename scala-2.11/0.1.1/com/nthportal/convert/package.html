@@ -1,0 +1,155 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>convert - com.nthportal.convert</title>
+          <meta name="description" content="convert - com.nthportal.convert" />
+          <meta name="keywords" content="convert com.nthportal.convert" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'com.nthportal.convert.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../lib/package_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="com">com</a>.<a href="../package.html" class="extype" name="com.nthportal">nthportal</a></p>
+        <h1>convert</h1><span class="permalink">
+      <a href="../../../index.html#com.nthportal.convert.package" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">convert</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="com.nthportal.convert.Convert" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ConvertextendsAnyRef"></a>
+      <a id="Convert:Convert"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Convert.html"><span class="name">Convert</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.nthportal.convert.package@ConvertextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An object for handling a conversion between two types.</p><div class="fullcomment"><div class="comment cmt"><p>An object for handling a conversion between two types.</p><p><a href="Convert$$Valid$.html" class="extype" name="com.nthportal.convert.Convert.Valid">Convert.Valid</a> returns the result of a conversion as is,
+and throws an exception if the conversion fails.</p><p><a href="Convert$$Any$.html" class="extype" name="com.nthportal.convert.Convert.Any">Convert.Any</a> returns the result of a conversion wrapped in
+an <span class="extype" name="scala.Option">Option</span>, and returns <span class="extype" name="scala.None">None</span> if
+the conversion fails.
+</p></div><dl class="attributes block"> <div class="block">Example:
+               <ol><li class="cmt"><p></p><pre><span class="cmt">/* Convert a string to a boolean */</span>
+<span class="kw">def</span> parseBoolean(s: <span class="std">String</span>)(<span class="kw">implicit</span> c: Convert): c.Result[<span class="std">Boolean</span>] = {
+  c.conversion {
+    s.toLowerCase <span class="kw">match</span> {
+      <span class="kw">case</span> <span class="lit">"true"</span> <span class="kw">=&gt;</span> <span class="kw">true</span>
+      <span class="kw">case</span> <span class="lit">"false"</span> <span class="kw">=&gt;</span> <span class="kw">false</span>
+      <span class="kw">case</span> _ <span class="kw">=&gt;</span> c.fail(<span class="kw">new</span> IllegalArgumentException(s<span class="lit">"'$s' is not 'true' or 'false'"</span>))
+    }
+  }
+}
+<span class="kw">val</span> res1: <span class="std">Boolean</span> = parseBoolean(<span class="lit">"true"</span>)(Convert.Valid)
+<span class="kw">val</span> res2: <span class="std">Option</span>[<span class="std">Boolean</span>] = parseBoolean(<span class="lit">"true"</span>)(Convert.<span class="std">Any</span>)</pre></li></ol>
+            </div></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="com.nthportal.convert.Convert" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Convert"></a>
+      <a id="Convert:Convert"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Convert$.html"><span class="name">Convert</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.nthportal.convert.package@Convert" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
